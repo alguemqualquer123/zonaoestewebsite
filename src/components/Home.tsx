@@ -166,6 +166,7 @@ function ScrollLink({
   );
 }
 
+/*
 interface ServerStatus {
   online: boolean;
   playerCount: number;
@@ -183,6 +184,7 @@ const defaultStatus: ServerStatus = {
   players: [],
   uptime: "",
 };
+*/
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -197,8 +199,9 @@ export default function Home() {
         .includes(ruleSearch.trim().toLocaleLowerCase("pt-BR"))
     );
   const [isLoading, setIsLoading] = useState(true);
-  const [server, setServer] = useState<ServerStatus>(defaultStatus);
+  // const [server, setServer] = useState<ServerStatus>(defaultStatus);
 
+  /*
   useEffect(() => {
     const fetchServer = async () => {
       try {
@@ -213,6 +216,7 @@ export default function Home() {
     const interval = setInterval(fetchServer, 15000);
     return () => clearInterval(interval);
   }, []);
+  */
 
   useEffect(() => {
     const preload = new Image();
@@ -455,10 +459,10 @@ export default function Home() {
                   <span className="pulse" /> Season 2 · no ar agora
                 </p>
                 <h1>
-                  Servidor de GTA RP<span>Cidade de São Paulo</span>
+                  Zona Oeste RP<span>Uma cidade que respira roleplay</span>
                 </h1>
                 <p className="hero-lede">
-                  A cidade está ligada. Seu personagem também.
+                  Encontre sua história nas ruas de São Paulo.
                 </p>
                 <div className="hero-actions">
                   <a
@@ -479,6 +483,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+              {/*
               <div className="server-panel">
                 <div className="panel-top">
                   <span>STATUS DO SERVIDOR</span>
@@ -507,6 +512,7 @@ export default function Home() {
                   <span>{server.uptime || "São Paulo, BR"}</span>
                 </div>
               </div>
+              */}
             </div>
             <a className="scroll-cue" href="#season">
               <span>role para explorar</span>
@@ -514,6 +520,7 @@ export default function Home() {
             </a>
           </section>
 
+          {/*
           <section
             className="signal-strip mt-20"
             aria-label="Indicadores do servidor"
@@ -535,6 +542,7 @@ export default function Home() {
               <span>season 2 no ar</span>
             </div>
           </section>
+          */}
 
           <section id="season" className="section features-section">
             <div className="section-heading">
