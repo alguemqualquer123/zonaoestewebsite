@@ -27,6 +27,15 @@ function GlobeIcon({ size = 18 }: { size?: number }) {
 export default function CreditosPage() {
   return (
     <div className="min-h-screen" style={{ background: "var(--ink)", color: "var(--paper)" }}>
+      <style>{`
+        .credit-link { transition: all .25s ease; }
+        .credit-link:hover { transform: translateY(-2px); }
+        .credit-link-discord { background: rgba(88,101,242,.15); border: 1px solid rgba(88,101,242,.35); color: #8b9aff; }
+        .credit-link-discord:hover { background: rgba(88,101,242,.25); border-color: rgba(88,101,242,.55); }
+        .credit-link-website { background: rgba(200,236,79,.08); border: 1px solid rgba(200,236,79,.25); color: var(--signal); }
+        .credit-link-website:hover { background: rgba(200,236,79,.15); border-color: rgba(200,236,79,.5); }
+      `}</style>
+
       <div style={{ maxWidth: 800, margin: "auto", padding: "120px 34px 80px" }}>
         <Link href="/" style={{ color: "var(--signal)", fontSize: 13, fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase" as const }}>
           ← Voltar ao início
@@ -39,11 +48,9 @@ export default function CreditosPage() {
         <div style={{ display: "grid", gap: 32 }}>
           {/* ── Fenix Development Card ── */}
           <section style={{ border: "1px solid rgba(200,236,79,.25)", padding: 0, background: "linear-gradient(135deg, rgba(200,236,79,.06) 0%, var(--surface) 50%)", position: "relative", overflow: "hidden", borderRadius: 12 }}>
-            {/* Top accent */}
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 4, background: "linear-gradient(90deg, var(--signal), rgba(200,236,79,.3), transparent)" }} />
 
             <div style={{ padding: "36px 32px 32px" }}>
-              {/* Header */}
               <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 24 }}>
                 <div style={{ width: 80, height: 80, borderRadius: 16, overflow: "hidden", border: "1px solid rgba(200,236,79,.2)", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "#0D0F12" }}>
                   <img src="/assets/fenix_logo.png" alt="Fenix Development" width={60} height={60} style={{ objectFit: "contain" }} />
@@ -58,38 +65,30 @@ export default function CreditosPage() {
                 </div>
               </div>
 
-              {/* Description */}
               <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.8, margin: "0 0 24px", fontFamily: "'Inter', sans-serif" }}>
                 Responsável pelo desenvolvimento completo do site, design visual,
                 integração com o servidor FiveM e toda a infraestrutura técnica
                 que mantém a Zona Oeste online.
               </p>
 
-              {/* Links */}
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a
                   href="https://discord.gg/XKBFcZPb8"
                   target="_blank"
                   rel="noreferrer"
+                  className="credit-link credit-link-discord"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
                     padding: "10px 18px",
-                    background: "rgba(88,101,242,.15)",
-                    border: "1px solid rgba(88,101,242,.35)",
                     borderRadius: 8,
-                    color: "#8b9aff",
                     fontSize: 12,
                     fontWeight: 700,
                     fontFamily: "'Inter', sans-serif",
                     letterSpacing: ".04em",
-                    textTransform: "uppercase",
                     textDecoration: "none",
-                    transition: "all .25s ease",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(88,101,242,.25)"; e.currentTarget.style.borderColor = "rgba(88,101,242,.55)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(88,101,242,.15)"; e.currentTarget.style.borderColor = "rgba(88,101,242,.35)"; e.currentTarget.style.transform = "none"; }}
                 >
                   <DiscordIcon size={16} /> Discord
                 </a>
@@ -97,25 +96,19 @@ export default function CreditosPage() {
                   href="https://fenixdevelopment.com.br/"
                   target="_blank"
                   rel="noreferrer"
+                  className="credit-link credit-link-website"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
                     padding: "10px 18px",
-                    background: "rgba(200,236,79,.08)",
-                    border: "1px solid rgba(200,236,79,.25)",
                     borderRadius: 8,
-                    color: "var(--signal)",
                     fontSize: 12,
                     fontWeight: 700,
                     fontFamily: "'Inter', sans-serif",
                     letterSpacing: ".04em",
-                    textTransform: "uppercase",
                     textDecoration: "none",
-                    transition: "all .25s ease",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(200,236,79,.15)"; e.currentTarget.style.borderColor = "rgba(200,236,79,.5)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(200,236,79,.08)"; e.currentTarget.style.borderColor = "rgba(200,236,79,.25)"; e.currentTarget.style.transform = "none"; }}
                 >
                   <GlobeIcon size={16} /> Website
                 </a>
