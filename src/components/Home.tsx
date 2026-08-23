@@ -371,7 +371,7 @@ export default function Home() {
           </div>
           <div className="loading-meta">
             <span>ESTABELECENDO CONEXÃO</span>
-            <strong>2026 / S2</strong>
+            {/* <strong>2026 / S2</strong> */}
           </div>
         </div>
       </div>
@@ -483,7 +483,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              {/*
+{/*               
               <div className="server-panel">
                 <div className="panel-top">
                   <span>STATUS DO SERVIDOR</span>
@@ -544,7 +544,7 @@ export default function Home() {
           </section>
           */}
 
-          <section id="season" className="section features-section">
+          <section id="season" className="section features-section w-full">
             <div className="section-heading">
               <div>
                 <p className="section-kicker">01 / a cidade</p>
