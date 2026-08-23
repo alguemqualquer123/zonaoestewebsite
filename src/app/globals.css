@@ -194,6 +194,49 @@ button { font:inherit; }
 @media (max-width:800px) { .rules-search-wrap { margin:0 0 22px; max-width:none; } }
 @media (prefers-reduced-motion:reduce) { .rules-search-wrap { transition:none; } }
 
+/* ===== FILM GRAIN TEXTURE ===== */
+.grain-overlay {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:999;
+  opacity:.045;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:128px 128px;
+  animation:grainShift .5s steps(4) infinite;
+}
+@keyframes grainShift {
+  0% { transform:translate(0,0); }
+  25% { transform:translate(-2px,1px); }
+  50% { transform:translate(1px,-2px); }
+  75% { transform:translate(-1px,2px); }
+  100% { transform:translate(0,0); }
+}
+
+/* ===== HERO PARALLAX ===== */
+.hero-video-bg {
+  will-change:transform;
+  transition:transform .1s linear;
+}
+.hero-scrim {
+  will-change:transform;
+  transition:transform .1s linear;
+}
+.hero-grid {
+  will-change:transform;
+  transition:transform .1s linear;
+}
+.hero-copy {
+  will-change:transform,opacity;
+  transition:transform .15s ease-out,opacity .15s ease-out;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .grain-overlay { animation:none; }
+  .hero-video-bg,.hero-scrim,.hero-grid,.hero-copy { transition:none; will-change:auto; }
+}
+
 @media (min-width:1440px) { .header-inner { max-width:1440px; padding:20px 48px; gap:36px; }.main-nav { gap:28px; }.hero-inner { width:min(1380px,calc(100% - 96px)); gap:100px; }.hero-copy { max-width:780px; }.signal-strip { padding:0 max(48px,calc((100% - 1380px)/2)); }.signal-strip strong { font-size:52px; }.signal-strip div { padding:26px 30px; }.section { width:min(1380px,calc(100% - 96px)); }.section-heading { gap:60px; }.section-intro { width:360px; font-size:15px; }.feature-card { min-height:260px; }.feature-card h3 { font-size:20px; }.feature-card p { max-width:300px; font-size:13px; }.ranking-section,.gallery-section,.vip-section { padding-left:max(48px,calc((100% - 1380px)/2)); padding-right:max(48px,calc((100% - 1380px)/2)); }.board-header,.player-row { grid-template-columns:100px 1fr 200px; }.player-row { min-height:80px; }.gallery-grid { gap:16px; }.gallery-grid img { min-height:300px; }.about-section { gap:140px; }.about-mark img { width:min(300px,75%); }.about-copy > p:not(.section-kicker) { max-width:600px; }.footer-main { max-width:1440px; padding:80px 48px; }.footer-bottom { max-width:1440px; padding:24px 48px; }.vip-grid { gap:18px; }.vip-card { min-height:410px; padding:28px 26px; }.rules-layout { gap:clamp(40px,8vw,140px); } }
 @media (min-width:1920px) { .header-inner { max-width:1700px; padding:22px 64px; gap:40px; }.main-nav { gap:32px; }.nav-link { font-size:12px; letter-spacing:.16em; }.hero-inner { width:min(1640px,calc(100% - 128px)); gap:120px; }.hero-copy { max-width:880px; }.hero h1 { font-size:clamp(80px,6.5vw,140px); }.hero-lede { font-size:20px; }.signal-strip { padding:0 max(64px,calc((100% - 1640px)/2)); }.signal-strip strong { font-size:58px; }.signal-strip div { padding:28px 34px; min-height:120px; }.section { width:min(1640px,calc(100% - 128px)); }.section-heading { gap:80px; margin-bottom:65px; }.section h2 { font-size:clamp(62px,5.5vw,105px); }.section-intro { width:400px; font-size:15px; }.feature-grid { gap:0; }.feature-card { min-height:290px; padding:30px 30px 30px 0; }.feature-card:nth-child(3n+2),.feature-card:nth-child(3n+3) { padding-left:30px; }.feature-card h3 { font-size:22px; }.feature-card p { max-width:320px; font-size:13px; line-height:1.8; }.ranking-section,.gallery-section,.vip-section { padding-left:max(64px,calc((100% - 1640px)/2)); padding-right:max(64px,calc((100% - 1640px)/2)); }.board-header,.player-row { grid-template-columns:120px 1fr 240px; }.player-row { min-height:86px; }.player-name { font-size:19px; }.player-hours { font-size:13px; }.step { min-height:112px; }.step-number { font-size:48px; }.gallery-grid { gap:20px; }.gallery-grid img { min-height:360px; }.gallery-grid figcaption { min-height:60px; font-size:13px; }.about-section { gap:180px; }.about-mark img { width:min(360px,75%); }.about-mark span { font-size:12px; }.about-copy > p:not(.section-kicker) { max-width:680px; font-size:15px; line-height:1.9; }.about-list { gap:16px; }.about-list span { font-size:13px; }.footer-main { max-width:1700px; padding:90px 64px; gap:60px; }.footer-main p { font-size:19px; }.footer-bottom { max-width:1700px; padding:26px 64px; }.vip-grid { gap:24px; }.vip-card { min-height:440px; padding:32px 30px; }.vip-card h3 { font-size:46px; }.vip-copy { font-size:13px; max-width:280px; }.vip-card li { font-size:12px; }.rules-layout { gap:clamp(50px,8vw,170px); }.rules-intro strong { font-size:clamp(40px,4vw,68px); }.rule-trigger { min-height:76px; font-size:15px; }.rules-search-wrap { max-width:850px; } }
 @media (min-width:2560px) { .header-inner { max-width:2200px; padding:24px 80px; }.main-nav { gap:38px; }.hero-inner { width:min(2100px,calc(100% - 160px)); gap:140px; }.hero-copy { max-width:1000px; }.hero h1 { font-size:clamp(90px,6vw,160px); }.hero-lede { font-size:22px; max-width:620px; }.signal-strip { padding:0 max(80px,calc((100% - 2100px)/2)); }.signal-strip strong { font-size:66px; }.signal-strip div { padding:32px 40px; min-height:130px; }.section { width:min(2100px,calc(100% - 160px)); }.section h2 { font-size:clamp(72px,5vw,120px); }.section-intro { width:460px; font-size:16px; }.feature-card { min-height:320px; padding:34px 34px 34px 0; }.feature-card:nth-child(3n+2),.feature-card:nth-child(3n+3) { padding-left:34px; }.feature-card h3 { font-size:24px; }.feature-card p { max-width:350px; font-size:14px; }.ranking-section,.gallery-section,.vip-section { padding-left:max(80px,calc((100% - 2100px)/2)); padding-right:max(80px,calc((100% - 2100px)/2)); }.board-header,.player-row { grid-template-columns:140px 1fr 280px; }.player-row { min-height:92px; }.player-position { font-size:40px; }.player-name { font-size:21px; letter-spacing:.05em; }.player-hours { font-size:14px; }.gallery-grid { gap:24px; }.gallery-grid img { min-height:440px; }.about-section { gap:220px; }.about-mark img { width:min(420px,70%); }.about-copy > p:not(.section-kicker) { max-width:750px; font-size:16px; }.footer-main { max-width:2200px; padding:100px 80px; gap:70px; }.footer-main p { font-size:21px; }.footer-bottom { max-width:2200px; padding:30px 80px; font-size:11px; }.vip-grid { gap:30px; }.vip-card { min-height:480px; padding:36px 34px; }.vip-card h3 { font-size:52px; }.vip-copy { font-size:14px; max-width:310px; }.vip-card li { font-size:13px; gap:11px; }.rules-layout { gap:clamp(60px,8vw,200px); }.rules-intro strong { font-size:clamp(48px,4vw,80px); }.rule-trigger { min-height:82px; font-size:16px; }.rule-panel p { font-size:14px; }.rules-search-wrap { max-width:960px; min-height:58px; }.rules-search-wrap input { min-height:58px; font-size:14px; } }

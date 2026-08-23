@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    serverComponentsHmrCache: true, // Turn off aggressive HMR caching
+    serverComponentsHmrCache: false, // Turn off aggressive HMR caching
   },
 };
 

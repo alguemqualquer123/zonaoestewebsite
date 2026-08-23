@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import EmberParticles from "@/components/EmberParticles";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -230,6 +231,17 @@ export default function Home() {
     };
   }, []);
 
+  // Force video autoplay fallback
+  useEffect(() => {
+    const video = document.querySelector<HTMLVideoElement>(".hero-video-bg");
+    if (!video) return;
+    video.play().catch(() => {});
+    // Re-trigger play when tab becomes visible again
+    const onVis = () => { if (!document.hidden) video.play().catch(() => {}); };
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
+  }, [isLoading]);
+
   useEffect(() => {
     const root = document.documentElement;
     const revealItems = document.querySelectorAll<HTMLElement>(
@@ -256,13 +268,30 @@ export default function Home() {
     };
     window.addEventListener("pointermove", onPointerMove, { passive: true });
 
-    // Header scroll effect
+    // Header scroll + hero parallax
     const header = document.querySelector<HTMLElement>(".site-header");
+    const heroVideo = document.querySelector<HTMLElement>(".hero-video-bg");
+    const heroScrim = document.querySelector<HTMLElement>(".hero-scrim");
+    const heroGrid = document.querySelector<HTMLElement>(".hero-grid");
+    const heroCopy = document.querySelector<HTMLElement>(".hero-copy");
     const onScroll = () => {
-      if (window.scrollY > 50) {
+      const sy = window.scrollY;
+      if (sy > 50) {
         header?.classList.add("is-scrolled");
       } else {
         header?.classList.remove("is-scrolled");
+      }
+      // Hero parallax
+      const heroH = window.innerHeight;
+      if (sy < heroH) {
+        const ratio = sy / heroH;
+        if (heroVideo) heroVideo.style.transform = `translateY(${sy * 0.35}px) scale(${1 + ratio * 0.05})`;
+        if (heroScrim) heroScrim.style.transform = `translateY(${sy * 0.2}px)`;
+        if (heroGrid) heroGrid.style.transform = `translateY(${sy * 0.15}px)`;
+        if (heroCopy) {
+          heroCopy.style.transform = `translateY(${sy * 0.25}px)`;
+          heroCopy.style.opacity = `${1 - ratio * 0.7}`;
+        }
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -300,12 +329,20 @@ export default function Home() {
       observer.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("scroll", onScroll);
+      // Reset parallax
+      if (heroVideo) heroVideo.style.transform = '';
+      if (heroScrim) heroScrim.style.transform = '';
+      if (heroGrid) heroGrid.style.transform = '';
+      if (heroCopy) { heroCopy.style.transform = ''; heroCopy.style.opacity = ''; }
       cardCleanups.forEach((cleanup) => cleanup());
     };
   }, []);
 
   return (
-    <>      <div className={`loading-screen ${isLoading ? "is-loading" : "is-ready"}`} aria-hidden={!isLoading}>
+    <>
+      <EmberParticles />
+      <div className="grain-overlay" aria-hidden="true" />
+      <div className={`loading-screen ${isLoading ? "is-loading" : "is-ready"}`} aria-hidden={!isLoading}>
         <div className="loading-grid" />
         <div className="loading-core">
           <div className="loading-mark-wrap">
@@ -470,7 +507,7 @@ export default function Home() {
           </section>
 
           <section
-            className="signal-strip"
+            className="signal-strip mt-20"
             aria-label="Indicadores do servidor"
           >
             <div>
