@@ -58,6 +58,11 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap"
+          as="style"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
