@@ -5,6 +5,14 @@
 :root { --ink:#090A0D; --surface:#101216; --surface-2:#17191f; --paper:#F2EFE9; --muted:#96979B; --signal:#C8EC4F; --line:rgba(242,239,233,.14); --radius:0.25rem; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; background:var(--ink); }
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width:8px; height:8px; }
+::-webkit-scrollbar-track { background:var(--ink); }
+::-webkit-scrollbar-thumb { background:rgba(200,236,79,.25); border-radius:10px; border:2px solid var(--ink); }
+::-webkit-scrollbar-thumb:hover { background:rgba(200,236,79,.45); }
+::-webkit-scrollbar-corner { background:var(--ink); }
+* { scrollbar-width:thin; scrollbar-color:rgba(200,236,79,.25) var(--ink); }
 body { margin:0; background:var(--ink); color:var(--paper); font-family:'Inter',sans-serif; }
 a { color:inherit; text-decoration:none; }
 button { font:inherit; }

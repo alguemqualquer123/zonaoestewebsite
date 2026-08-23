@@ -70,7 +70,7 @@ export default function TermosPage() {
 
           <section>
             <h2 style={{ color: "var(--paper)", fontFamily: "'Kanit', sans-serif", fontSize: 20, fontWeight: 700, textTransform: "uppercase", marginBottom: 12 }}>8. Contato</h2>
-            <p>Em caso de dúvidas sobre estes termos, entre em contato pelo nosso <a href="https://discord.gg/UFEV5632b" target="_blank" rel="noreferrer" style={{ color: "var(--signal)" }}>Discord oficial</a>.</p>
+            <p>Em caso de dúvidas sobre estes termos, entre em contato pelo nosso <a href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"} target="_blank" rel="noreferrer" style={{ color: "var(--signal)" }}>Discord oficial</a>.</p>
           </section>
         </div>
       </div>

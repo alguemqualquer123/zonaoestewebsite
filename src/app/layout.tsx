@@ -79,8 +79,8 @@ export default function RootLayout({
                     url: "/assets/logo.png",
                   },
                   sameAs: [
-                    "https://discord.gg/eliterpgg",
-                    "https://zosprp.centralcart.ai/",
+                    process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b",
+                    process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/",
                   ],
                 },
                 {

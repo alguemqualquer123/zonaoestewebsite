@@ -399,7 +399,7 @@ export default function Home() {
             <div className="header-actions">
               <a
                 className="header-store"
-                href="https://zosprp.centralcart.ai/"
+                href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -407,7 +407,7 @@ export default function Home() {
               </a>
               <a
                 className="header-discord"
-                href="https://discord.gg/UFEV5632b"
+                href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -425,7 +425,7 @@ export default function Home() {
         </header>
 
         <main id="conteudo">
-          <section id="inicio" className="hero hero-video">
+          <section id="inicio" className="min-h-screen h-screen hero hero-video">
             <video
               className="hero-video-bg"
               autoPlay
@@ -454,7 +454,7 @@ export default function Home() {
                 </p>
                 <div className="hero-actions">
                   <a
-                    href="https://cfx.re/join/ad7z6e"
+                    href={process.env.NEXT_PUBLIC_CONNECT_URL || "https://cfx.re/join/ad7z6e"}
                     target="_blank"
                     rel="noreferrer"
                     className="button button-primary"
@@ -462,7 +462,7 @@ export default function Home() {
                     Conectar na cidade <ArrowUpRight size={17} />
                   </a>
                   <a
-                    href="https://discord.gg/UFEV5632b"
+                    href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
                     target="_blank"
                     rel="noreferrer"
                     className="button button-ghost"
@@ -655,7 +655,7 @@ export default function Home() {
                   </ul>
                   <a
                     className="vip-cta"
-                    href="https://zosprp.centralcart.ai/"
+                    href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -670,7 +670,7 @@ export default function Home() {
               </span>
               <a
                 className="text-link"
-                href="https://zosprp.centralcart.ai/"
+                href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -726,7 +726,7 @@ export default function Home() {
                 </strong>
                 <a
                   className="text-link"
-                  href="https://discord.gg/UFEV5632b"
+                  href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -938,7 +938,7 @@ export default function Home() {
               </a>
               <a
                 className="button button-store"
-                href="https://zosprp.centralcart.ai/"
+                href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -959,7 +959,7 @@ export default function Home() {
             </div>
             <div className="socials">
               <a
-                href="https://www.tiktok.com/@zonaoesteroleplay011"
+                href={process.env.NEXT_PUBLIC_TIKTOK_URL || "https://www.tiktok.com/@zonaoesteroleplay011"}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
@@ -967,7 +967,7 @@ export default function Home() {
                 <Music2 size={16} />
               </a>
               <a
-                href="https://discord.gg/UFEV5632b"
+                href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Discord"
@@ -980,7 +980,7 @@ export default function Home() {
       </div>
       <a
         className="floating-discord"
-        href="https://discord.gg/UFEV5632b"
+        href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
         target="_blank"
         rel="noreferrer"
         aria-label="Entrar no Discord da Zona Oeste"

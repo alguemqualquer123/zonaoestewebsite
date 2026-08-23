@@ -31,7 +31,7 @@ export default function RegrasPage() {
         </p>
         <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 40 }}>
           Regulamento completo disponivel no{" "}
-          <a href="https://discord.gg/UFEV5632b" target="_blank" rel="noreferrer" style={{ color: "var(--signal)" }}>Discord oficial</a>.
+          <a href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"} target="_blank" rel="noreferrer" style={{ color: "var(--signal)" }}>Discord oficial</a>.
         </p>
         <div style={{ display: "grid", gap: 28 }}>
           {rules.map((section, i) => (
