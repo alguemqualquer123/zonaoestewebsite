@@ -49,8 +49,8 @@ export default function CreditosPage() {
             </h2>
             <div style={{ display: "grid", gap: 12 }}>
               {[
-                { role: "Fundador", name: "Adminstrador" },
-                { role: "Equipe de Staff", name: "Moderadores e Suporte" },
+                { role: "Fundador", name: "SR VINIX" },
+                { role: "Equipe de Staff", name: "SR VINIX" },
                 { role: "Desenvolvimento", name: "Fenix Development" },
               ].map((member) => (
                 <div key={member.role} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0", borderBottom: "1px solid rgba(242,239,233,.08)" }}>
