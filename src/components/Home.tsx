@@ -231,15 +231,23 @@ export default function Home() {
     };
   }, []);
 
-  // Force video autoplay fallback
+  // Force video autoplay + keep alive
   useEffect(() => {
     const video = document.querySelector<HTMLVideoElement>(".hero-video-bg");
     if (!video) return;
     video.play().catch(() => {});
-    // Re-trigger play when tab becomes visible again
-    const onVis = () => { if (!document.hidden) video.play().catch(() => {}); };
+    // Re-trigger play when tab becomes visible or video pauses unexpectedly
+    const onVis = () => { if (!document.hidden && video.paused) video.play().catch(() => {}); };
+    const onTimeUpdate = () => {
+      // If video is near end, loop is handled by attribute, but ensure it keeps playing
+      if (video.paused && !video.ended) video.play().catch(() => {});
+    };
     document.addEventListener("visibilitychange", onVis);
-    return () => document.removeEventListener("visibilitychange", onVis);
+    video.addEventListener("pause", onTimeUpdate);
+    return () => {
+      document.removeEventListener("visibilitychange", onVis);
+      video.removeEventListener("pause", onTimeUpdate);
+    };
   }, [isLoading]);
 
   useEffect(() => {

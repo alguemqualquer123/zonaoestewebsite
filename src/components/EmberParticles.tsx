@@ -42,7 +42,7 @@ export default function EmberParticles() {
       opacity: 0.5 + Math.random() * 0.5,
       life: 0,
       maxLife: 100 + Math.random() * 120,
-      hue: 20 + Math.random() * 40,
+      hue: 70 + Math.random() * 30, // green range matching signal #C8EC4F
       wobble: 0.015 + Math.random() * 0.03,
     });
 
@@ -64,9 +64,9 @@ export default function EmberParticles() {
         if (e.life > e.maxLife || e.opacity <= 0 || e.y < -20) return false;
 
         const g = ctx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.size * 2.5);
-        g.addColorStop(0, `hsla(${e.hue},100%,65%,${e.opacity})`);
-        g.addColorStop(0.4, `hsla(${e.hue - 8},100%,50%,${e.opacity * 0.5})`);
-        g.addColorStop(1, `hsla(${e.hue - 15},100%,40%,0)`);
+        g.addColorStop(0, `hsla(${e.hue},80%,60%,${e.opacity})`);
+        g.addColorStop(0.4, `hsla(${e.hue - 5},70%,50%,${e.opacity * 0.5})`);
+        g.addColorStop(1, `hsla(${e.hue - 10},60%,40%,0)`);
         ctx.beginPath();
         ctx.arc(e.x, e.y, e.size * 2.5, 0, Math.PI * 2);
         ctx.fillStyle = g;

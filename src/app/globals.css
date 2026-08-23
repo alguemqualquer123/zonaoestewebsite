@@ -30,8 +30,8 @@ button { font:inherit; }
 .nav-account { color:var(--paper); border-left:1px solid var(--line); padding-left:20px; }
 .live-dot,.panel-online i,.pulse { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 12px var(--signal); margin-right:7px; }
 .header-actions { display:flex; align-items:center; gap:10px; }
-.header-discord { padding:10px 13px; background:var(--signal); font:700 11px 'Inter'; text-transform:uppercase; letter-spacing:.1em; display:flex; align-items:center; gap:7px; transition:background .18s,transform .18s; }
-.header-discord:hover,.button-primary:hover { background:#ff625b; transform:translateY(-2px); }
+.header-discord { padding:10px 13px; background:var(--signal); color:#090A0D; font:700 11px 'Inter'; text-transform:uppercase; letter-spacing:.1em; display:flex; align-items:center; gap:7px; transition:background .18s,transform .18s; }
+.header-discord:hover { background:#b0d940; transform:translateY(-2px); }
 .menu-toggle { display:none; background:none; border:0; color:#fff; }
 .hero { min-height:760px; position:relative; display:flex; align-items:center; background-position:center; background-size:cover; padding-top:70px; }
 .hero-scrim { position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,8,11,.96) 0%,rgba(8,8,11,.7) 44%,rgba(8,8,11,.42) 100%),linear-gradient(0deg,#090A0D 0%,transparent 35%,rgba(8,8,11,.52) 100%); }
@@ -97,7 +97,7 @@ button { font:inherit; }
 
 .header-store { padding:10px 13px; border:1px solid rgba(200,236,79,.65); color:var(--signal); font:700 11px 'Inter'; text-transform:uppercase; letter-spacing:.1em; display:flex; align-items:center; gap:7px; transition:background .18s,transform .18s,color .18s; }
 .header-store:hover { background:var(--signal); color:#090A0D; transform:translateY(-2px); }
-.header-discord:hover,.button-primary:hover { background:#d9f875; color:#090A0D; transform:translateY(-2px); }
+.button-primary:hover { background:#d9f875; color:#090A0D; transform:translateY(-2px); }
 .button-primary { color:#090A0D; }
 .footer-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .button-store { border:1px solid rgba(200,236,79,.65); color:var(--signal); font:700 12px 'Inter'; }
