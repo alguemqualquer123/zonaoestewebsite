@@ -411,7 +411,7 @@ export default function Home() {
             <div className="header-actions">
               <a
                 className="header-store"
-                href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
+                href={process.env.NEXT_PUBLIC_STORE_URL || "https://www.fenixdevelopment.com.br"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -419,7 +419,7 @@ export default function Home() {
               </a>
               <a
                 className="header-discord"
-                href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
+                href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -455,26 +455,26 @@ export default function Home() {
             <div className="hero-grid" />
             <div className="hero-inner">
               <div className="hero-copy">
-                <p className="eyebrow">
+                <p className="eyebrow pb-8">
                   <span className="pulse" /> Season 2 · no ar agora
                 </p>
-                <h1>
-                  Zona Oeste RP<span>Uma cidade que respira roleplay</span>
+                <h1 className="text-sm">
+                  São Paulo<span>Do Seu Jeito.</span>
                 </h1>
                 <p className="hero-lede">
-                  Encontre sua história nas ruas de São Paulo.
+                  Construa <span className="text-white font-bold">sua história</span> em uma cidade onde cada escolha muida o seu caminho.
                 </p>
                 <div className="hero-actions">
                   <a
-                    href={process.env.NEXT_PUBLIC_CONNECT_URL || "https://cfx.re/join/ad7z6e"}
+                    href={process.env.NEXT_PUBLIC_CONNECT_URL || "https://cfx.re/join/"}
                     target="_blank"
                     rel="noreferrer"
                     className="button button-primary"
                   >
-                    Conectar na cidade <ArrowUpRight size={17} />
+                    Jogar agora <ArrowUpRight size={17} />
                   </a>
                   <a
-                    href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/UFEV5632b"}
+                    href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/"}
                     target="_blank"
                     rel="noreferrer"
                     className="button button-ghost"
