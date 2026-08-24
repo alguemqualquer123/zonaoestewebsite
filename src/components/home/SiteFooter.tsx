@@ -32,15 +32,15 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 ZONA OESTE ROLEPLAY</span>
+        <span>Copyright © 2026 - ZONA OESTE ROLEPLAY</span>
         <div>
           <a href="/regras">Regras</a>
           <a href="/privacidade">Privacidade</a>
           <a href="/termos">Termos</a>
-          <div>
-            <img src={FENIX_LOGO} alt="Logo oficial Fênix Development" width={30} height={30} />
-            <a href="/creditos">Créditos</a>
-          </div>
+          <a href="/creditos" className="dev-credit">
+            <img src={FENIX_LOGO} alt="Fênix Development" width={20} height={20} />
+            Desenvolvido por <strong>Fênix Development</strong>
+          </a>
         </div>
         <div className="socials">
           <a
