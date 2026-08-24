@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const url = "https://zona-oeste-roleplay.vercel.app"
 export const metadata: Metadata = {
   title: "Zona Oeste Roleplay | Servidor de GTA RP em São Paulo",
   description:
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   creator: "Zona Oeste Roleplay",
   publisher: "Zona Oeste Roleplay",
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  metadataBase: new URL("https://zona-oeste-roleplay.vercel.app"),
+  metadataBase: new URL(url),
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       "Viva histórias com consequência em uma cidade de GTA RP inspirada em São Paulo.",
     images: [
       {
-        url: "/assets/logo.png",
+        url: `${url}/assets/logo.png`,
         width: 1600,
         height: 900,
         alt: "Logo Zona Oeste Roleplay",
@@ -34,10 +35,10 @@ export const metadata: Metadata = {
     title: "Zona Oeste Roleplay | A Zona Oeste está ligada",
     description:
       "Entre na cidade, construa seu personagem e viva o verdadeiro RP de São Paulo.",
-    images: ["/assets/logo.png"],
+    images: [`${url}/assets/logo.png`],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: `${url}/favicon.svg`,
   },
 };
 
