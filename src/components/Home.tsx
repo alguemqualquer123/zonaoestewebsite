@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import EmberParticles from "@/components/EmberParticles";
+import StoreSection from "@/components/StoreSection";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -10,7 +11,6 @@ import {
   ChevronDown,
   ChevronRight,
   Clock3,
-  Crown,
   Gamepad2,
   Music2,
   MapPin,
@@ -44,7 +44,7 @@ function DiscordIcon({
   );
 }
 
-const hero = "/assets/hero.jpg";
+const hero = "/assets/Banner_zona_oeste_rp_-_social_media_v1.png";
 const mark = "/assets/logo.png";
 const gallery = [
   "/assets/flyer1.png",
@@ -56,32 +56,38 @@ const features = [
   [
     MapPin,
     "Cidade viva",
-    "Um mapa urbano inspirado na capital paulista, com cada esquina pronta para uma nova história.",
+    "São Paulo pulsa ao seu redor. Cada rua, encontro e escolha pode dar início a uma nova história.",
+    "#galeria",
   ],
   [
     Users,
     "Facções & territórios",
-    "Alianças, disputas e organizações que transformam presença em influência.",
+    "Construa alianças, dispute territórios e transforme presença em influência pelas ruas.",
+    "#ranking",
   ],
   [
     Gamepad2,
-    "Empregos & carreiras",
-    "Do primeiro turno ao próprio negócio: sua rotina também constrói reputação.",
+    "Carreiras & negócios",
+    "Comece de baixo, construa sua trajetória e transforme trabalho em patrimônio.",
+    "#como-jogar",
   ],
   [
     Zap,
-    "Economia que pesa",
-    "Propriedades, veículos e escolhas que têm consequência dentro da cidade.",
+    "Economia realista",
+    "Ganhe, invista e evolua. Suas decisões financeiras realmente impactam sua trajetória.",
+    "#loja",
   ],
   [
     ShieldCheck,
     "Polícia & justiça",
-    "Conflito com contexto, suporte presente e regras claras para um RP consistente.",
+    "Das ruas aos tribunais, suas ações têm consequências e a lei faz parte da história.",
+    "#regras",
   ],
   [
     CarFront,
-    "Veículos & tuning",
-    "Uma garagem para chamar de sua, com identidade em cada detalhe.",
+    "Veículos & customização",
+    "Escolha, personalize e construa uma garagem que carregue a sua identidade.",
+    "#loja",
   ],
 ];
 
@@ -113,42 +119,6 @@ const basicRules = [
   {
     title: "Use canais oficiais para suporte",
     copy: "Dúvidas e denúncias devem ser encaminhadas à equipe pelos canais oficiais da comunidade, com informações claras e provas quando possível.",
-  },
-];
-
-const vipPackages = [
-  {
-    name: "VIP Rua",
-    label: "entrada",
-    copy: "O primeiro sinal de presença na cidade.",
-    benefits: [
-      "Benefícios exclusivos por 30 dias",
-      "Prioridade em ações especiais",
-      "Identidade VIP dentro da comunidade",
-    ],
-    tone: "vip-basic",
-  },
-  {
-    name: "VIP Centro",
-    label: "mais escolhido",
-    copy: "Mais acesso, mais presença e mais possibilidades.",
-    benefits: [
-      "Tudo do VIP Rua",
-      "Vantagens extras na experiência",
-      "Acesso a benefícios da categoria",
-    ],
-    tone: "vip-featured",
-  },
-  {
-    name: "VIP Mansão",
-    label: "alta frequência",
-    copy: "Para quem quer deixar uma marca maior na cidade.",
-    benefits: [
-      "Tudo do VIP Centro",
-      "Pacote exclusivo da loja",
-      "Experiência premium por 30 dias",
-    ],
-    tone: "vip-premium",
   },
 ];
 
@@ -237,7 +207,7 @@ export default function Home() {
 
   // Force video autoplay + keep alive
   useEffect(() => {
-    const video = document.querySelector<HTMLVideoElement>(".hero-video-bg");
+    const video = document.querySelector<HTMLVideoElement>("video.hero-video-bg");
     if (!video) return;
     video.play().catch(() => {});
     // Re-trigger play when tab becomes visible or video pauses unexpectedly
@@ -310,7 +280,7 @@ export default function Home() {
     onScroll();
 
     const interactiveCards = document.querySelectorAll<HTMLElement>(
-      ".feature-card, .gallery-grid figure, .player-row, .server-panel"
+      ".feature-card, .gallery-grid figure, .player-row, .server-panel, .vip-card, .store-card"
     );
     const cardCleanups = Array.from(interactiveCards).map((card) => {
       const onCardMove = (event: PointerEvent) => {
@@ -438,7 +408,8 @@ export default function Home() {
 
         <main id="conteudo">
           <section id="inicio" className="min-h-screen h-screen hero hero-video">
-            <video
+            <img src={"/assets/Banner_zona_oeste_rp_-_social_media_v1.png"} alt="" className="hero-video-bg" />
+            {/* <video
               className="hero-video-bg"
               autoPlay
               muted
@@ -450,7 +421,7 @@ export default function Home() {
                 src="/assets/Loadscreen Zona Oeste RP.mp4"
                 type="video/mp4"
               />
-            </video>
+            </video> */}
             <div className="hero-scrim" />
             <div className="hero-grid" />
             <div className="hero-inner">
@@ -458,7 +429,7 @@ export default function Home() {
                 <p className="eyebrow pb-8">
                   <span className="pulse" /> Season 2 · no ar agora
                 </p>
-                <h1 className="text-sm">
+                <h1>
                   São Paulo<span>Do Seu Jeito.</span>
                 </h1>
                 <p className="hero-lede">
@@ -544,7 +515,8 @@ export default function Home() {
           </section>
           */}
 
-          <section id="season" className="section features-section w-full">
+          <section id="season" className="section features-section w-full h-screen">
+            <img src={"/assets/1f95a30f-8a16-4b70-8853-81d0b96bf316.png"} alt="" className="absolute bg-contain insert-1" />
             <div className="section-heading">
               <div>
                 <p className="section-kicker">01 / a cidade</p>
@@ -555,13 +527,14 @@ export default function Home() {
                 </h2>
               </div>
               <p className="section-intro">
-                Transmissão ativa: uma cidade viva, sistemas profundos e
-                histórias que deixam marca — do primeiro login ao seu legado na
-                metrópole.
+                São paulo não para.
+                Escolha seu caminho,
+                construa sua reputação e
+                deixe sua marca na cidade.
               </p>
             </div>
             <div className="feature-grid">
-              {features.map(([Icon, title, copy], index) => {
+              {features.map(([Icon, title, copy, href], index) => {
                 const FeatureIcon = Icon as typeof MapPin;
                 return (
                   <article className="feature-card" key={title as string}>
@@ -569,7 +542,9 @@ export default function Home() {
                     <FeatureIcon size={25} strokeWidth={1.5} />
                     <h3>{title as string}</h3>
                     <p>{copy as string}</p>
-                    <ArrowUpRight className="feature-arrow" size={18} />
+                    <a className="feature-link" href={href as string}>
+                      Explorar <ArrowUpRight size={14} />
+                    </a>
                   </article>
                 );
               })}
@@ -636,64 +611,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="vip" className="section vip-section">
-            <div className="section-heading">
-              <div>
-                <p className="section-kicker">03 / loja oficial</p>
-                <h2>
-                  Escolha seu
-                  <br />
-                  <em>pacote VIP</em>
-                </h2>
-              </div>
-              <p className="section-intro">
-                Dê outro ritmo à sua passagem pela cidade. Veja os destaques e
-                confira todos os detalhes diretamente na Loja VIP Zona Oeste.
-              </p>
-            </div>
-            <div className="vip-grid">
-              {vipPackages.map((pack, index) => (
-                <article className={`vip-card ${pack.tone}`} key={pack.name}>
-                  <div className="vip-card-top">
-                    <span className="vip-index">0{index + 1}</span>
-                    <span className="vip-label">{pack.label}</span>
-                  </div>
-                  <Crown size={24} className="vip-icon" />
-                  <h3>{pack.name}</h3>
-                  <p className="vip-copy">{pack.copy}</p>
-                  <ul>
-                    {pack.benefits.map((benefit) => (
-                      <li key={benefit}>
-                        <Check size={14} />
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    className="vip-cta"
-                    href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Ver na loja <ArrowUpRight size={16} />
-                  </a>
-                </article>
-              ))}
-            </div>
-            <div className="vip-footer-line">
-              <span>
-                <ShoppingBag size={15} /> Entrega automática na comunidade
-              </span>
-              <a
-                className="text-link"
-                href={process.env.NEXT_PUBLIC_STORE_URL || "https://zosprp.centralcart.ai/"}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Abrir Loja VIP Zona Oeste <ArrowUpRight size={15} />
-              </a>
-            </div>
-          </section>
+          <StoreSection />
 
           <section id="regras" className="section rules-section">
             <div className="section-heading">
