@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const url = "https://zona-oeste-roleplay.vercel.app"
+const url = "https://zonaoestewebsite.vercel.app"
 export const metadata: Metadata = {
   title: "Zona Oeste Roleplay | Servidor de GTA RP em São Paulo",
   description:
