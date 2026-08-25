@@ -1,42 +1,48 @@
 import { Check } from "lucide-react";
 import { LOGO } from "@/data/assets";
 
+const aboutList = [
+  "Comunidade ativa e sem toxicidade",
+  "Staff presente e suporte 24/7",
+  "Atualizações e eventos constantes",
+  "RP sério, do iniciante ao veterano",
+];
+
 export default function AboutSection() {
   return (
     <section id="sobre" className="section about-section">
       <div className="about-mark">
+        <span className="about-badge">Desde 2024</span>
         <img src={LOGO} alt="Logo oficial Zona Oeste" />
-        <span>
-          DESDE
-          <br />
-          2024
-        </span>
       </div>
       <div className="about-copy">
-        <p className="section-kicker">07 / sobre nós</p>
+        <p className="about-kicker">Sobre nós</p>
         <h2>
           Mais que um servidor.
           <br />
-          <em>Uma frequência.</em>
+          <em>Uma comunidade.</em>
         </h2>
-        <p>
-          A Zona Oeste nasceu para transformar presença em história. Uma
-          experiência de RP inspirada na energia de São Paulo, onde cada
-          personagem tem contexto e cada escolha deixa consequência.
+        <p className="about-text">
+          A Zona Oeste SP Roleplay nasceu da paixão por criar a experiência de
+          RP mais autêntica do Brasil — inspirada no cotidiano vibrante de São
+          Paulo. Aqui o roleplay é levado a sério: cada personagem tem
+          história, cada escolha tem consequência.
+        </p>
+        <p className="about-text">
+          Nossa equipe é formada por jogadores veteranos e desenvolvedores que
+          acreditam que o verdadeiro RP vai além do jogo. É sobre comunidade,
+          respeito e criatividade — num ambiente acolhedor, seguro e livre de
+          toxicidade.
         </p>
         <div className="about-list">
-          <span>
-            <Check size={15} /> Comunidade ativa
-          </span>
-          <span>
-            <Check size={15} /> Staff presente 24/7
-          </span>
-          <span>
-            <Check size={15} /> Eventos constantes
-          </span>
-          <span>
-            <Check size={15} /> RP sério para todos
-          </span>
+          {aboutList.map((item) => (
+            <span key={item}>
+              <span className="about-check">
+                <Check size={13} strokeWidth={3} />
+              </span>
+              {item}
+            </span>
+          ))}
         </div>
       </div>
     </section>

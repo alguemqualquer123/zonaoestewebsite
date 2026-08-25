@@ -1,11 +1,12 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import DiscordIcon from "@/components/icons/DiscordIcon";
-import { HERO_BANNER } from "@/data/assets";
+import { LOGO } from "@/data/assets";
 
 export default function Hero() {
   return (
     <section id="inicio" className="min-h-screen h-screen hero hero-video">
-      <img src={HERO_BANNER} alt="" className="hero-video-bg" />
+      {/* TODO: voltar para o banner HERO_BANNER quando disponível */}
+      <img src={LOGO} alt="" className="hero-video-bg hero-logo-bg" />
       {/* <video
         className="hero-video-bg"
         autoPlay

@@ -42,7 +42,6 @@ const features = [
 export default function FeaturesSection() {
   return (
     <section id="season" className="section features-section w-full h-screen">
-      <img src={"/assets/1f95a30f-8a16-4b70-8853-81d0b96bf316.png"} alt="" className="absolute bg-contain insert-1" />
       <div className="section-heading">
         <div>
           <p className="section-kicker">01 / a cidade</p>

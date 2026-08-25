@@ -14,14 +14,14 @@ import GallerySection from "@/components/home/GallerySection";
 import AboutSection from "@/components/home/AboutSection";
 import SiteFooter from "@/components/home/SiteFooter";
 import FloatingDiscord from "@/components/home/FloatingDiscord";
-import { HERO_BANNER } from "@/data/assets";
+import { LOGO } from "@/data/assets";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const preload = new Image();
-    preload.src = HERO_BANNER;
+    preload.src = LOGO;
     let timer: number | undefined;
     const reveal = () => {
       timer = window.setTimeout(() => setIsLoading(false), 850);
