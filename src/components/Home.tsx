@@ -166,7 +166,7 @@ export default function Home() {
         <main id="conteudo">
           <Hero />
           <FeaturesSection />
-          <RankingSection />
+          {/* <RankingSection /> */}
           <StoreSection />
           <RulesSection />
           <StepsSection />
