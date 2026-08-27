@@ -1,5 +1,6 @@
 import { ArrowUpRight, Music2, ShoppingBag } from "lucide-react";
 import DiscordIcon from "@/components/icons/DiscordIcon";
+import InstagramIcon from "@/components/icons/InstagramIcon";
 import { FENIX_LOGO, LOGO } from "@/data/assets";
 
 export default function SiteFooter() {
@@ -43,6 +44,14 @@ export default function SiteFooter() {
           </a>
         </div>
         <div className="socials">
+          <a
+            href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/oficialzonaoeste?igsi=eHFzdHhjb2FoaGpw"}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+          >
+            <InstagramIcon size={16} />
+          </a>
           <a
             href={process.env.NEXT_PUBLIC_TIKTOK_URL || "https://www.tiktok.com/@zonaoesteroleplay011"}
             target="_blank"
